@@ -1,0 +1,49 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Account creation</title>
+</head>
+   <!-- CSS file-->
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/styles.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<body>
+  
+
+
+{{!-- Login Form --}}
+{{!-- need to enter post and on click methods  --}}
+  <div class="container">
+  <div class="row">
+  <div class="col-8 offset-2">
+    <h1>Create a new account!</h1>
+    <form class="clearfix mb-4" action="/" methos="POST">
+{{!-- Enter Email --}}
+    <div class="form-group">
+    <label for="userEmail">Email</label>
+    <input type="email" id="userEmail" class="form-control" placeholder="adam@gmail.com">
+    </div>
+{{!-- Enter Password --}}
+    <div class="form-group">
+    <label for="userPassword">Password</label>
+    <input type="password" class="form-control" id="userPassword" placeholder="password"></textarea>
+    </div>
+{{!-- Submit Button --}}
+    <button id="submit" class="btn btn-primary float-right">Submit</button>
+    </form>     
+    </div>
+    </div>
+  </div>
+
+</body>
+</html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/signup.js"></script>
