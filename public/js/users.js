@@ -23,36 +23,21 @@ app.set("view engine", "handlebars");
 
  app.get("/signup", function(req, res){
    res.render("create")
-  });
+ });
    
-   app.post("/signup", function(req, res){
-     console.log(req.body);
-     console.log("signup")
+  app.post("/signup", function(req, res){
      db.User.create({
        email: req.body.email,
        password: req.body.password
-     }).then(function(data){
-      //  res.json(data);
-       res.redirect('/profile');
-     }).catch(function(err){
-       console.log(err);
-       res.json(err);
      })
-   });
-
-   app.get("/profile", function(req, res){
-     res.render('profile');
    })
-
-   app.get("/api/examples", function(req, res){
-      console.log(req.body);
-      res.end();
-   })
-
+ });
 
   // Route for logging user out
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
-  });
-}
+//   app.get("/logout", function(req, res) {
+//     req.logout();
+//     res.redirect("/");
+//   });
+// }
+
+module.exports = router;

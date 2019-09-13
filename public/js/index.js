@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
+$(document).ready(function(){
 // Get references to page elements
-var $exampleText = $("#userEmail");
-var $exampleDescription = $("#userPassword");
+var $userEmail = $("#userEmail");
+var $userPassword = $("#userPassword");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
@@ -23,57 +24,17 @@ var API = {
                 type: "GET"
             })
         }
-    // getExamples: function() {
-    //     return $.ajax({
-    //         url: "api/examples",
-    //         type: "GET"
-    //     });
-    // },
-    // deleteExample: function(id) {
-    //     return $.ajax({
-    //         url: "api/examples/" + id,
-    //         type: "DELETE"
-    //     });
-    // }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-    API.getExamples().then(function(data) {
-        var $examples = data.map(function(example) {
-            var $a = $("<a>")
-                .text(example.text)
-                .attr("href", "/example/" + example.id);
-
-            var $li = $("<li>")
-                .attr({
-                    class: "list-group-item",
-                    "data-id": example.id
-                })
-                .append($a);
-
-            var $button = $("<button>")
-                .addClass("btn btn-danger float-right delete")
-                .text("ｘ");
-
-            $li.append($button);
-
-            return $li;
-        });
-
-        $exampleList.empty();
-        $exampleList.append($examples);
-    });
-};
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
     event.preventDefault();
-
+    console.log('hi');
     var example = {
-        email: $exampleText.val().trim(),
-        password: $exampleDescription.val().trim()
+        email: $userEmail.val().trim(),
+        password: $userPassword.val().trim()
     };
 
     console.log(example);
@@ -83,20 +44,20 @@ var handleFormSubmit = function(event) {
         return;
     }
 
-    API.saveExample(example).then(function() {
-        refreshExamples();
-    });
+    API.saveExample(example).then(function(){
+        window.location.href="/profile";
+    })
 
-    $exampleText.val("");
-    $exampleDescription.val("");
+    $userEmail.val("");
+    $userPassword.val("");
 };
 
 var handleLoginSubmit = function(event) {
     event.preventDefault();
 
     var example = {
-        email: $exampleText.val().trim(),
-        password: $exampleDescription.val().trim()
+        email: $userEmailt.val().trim(),
+        password: $userPassword.val().trim()
     };
 
     console.log(example);
@@ -126,3 +87,5 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+});
