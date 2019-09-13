@@ -1,4 +1,9 @@
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<head>
+<link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
+</head>
+
+ <!-- nav bar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item">
         <a class="btn btn-default" href="index.html">
@@ -6,31 +11,27 @@
         </a>
         </li>
         </ul>
-      
         <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                <a class="nav-link" role="button" data-target="#carouselExampleControls" data-slide-to="0" href="#" id="about">ABOUT</a>
+                <a class="nav-link" role="button" data-target="#carouselExampleControls" data-slide-to="0" href="#" id="logoutButton">LOGOUT</a>
                 </li>
-                    <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            LOGOUT
-                            </a>   
-                    </li>
-                    </ul>
+                </ul>
+        </nav> 
+        
+        
+<!-- Search form -->
+<form class="example" action="action_page.php">
+    <input type="text" placeholder="Search an artist..." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
 
-        <form class="example" action="action_page.php">
-        <input type="text" placeholder="Search an artist..." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-
-        <div class="sidenav" id="artists">
-            <a href="#">Append artist here</a>
-            <a href="#">Append artist here</a>
-            <a href="#">Append artist here</a>
-            <a href="#">Append artist here</a>
+<div class="sidenav" id="artists">
+    <a href="#">Append artist here</a>
+    <a href="#">Append artist here</a>
+    <a href="#">Append artist here</a>
+    <a href="#">Append artist here</a>
 </div>
 
 <div id="personalContent">
     Display information here
 </div>
-        </nav> 
